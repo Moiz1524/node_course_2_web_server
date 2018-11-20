@@ -36,11 +36,18 @@ app.get('/', (req, res) => {
     message: 'Welcome to a new world'
   })
   });
+
+app.get('/project', (req, res) => {
+  res.render('project.hbs', {
+    pageTitle: 'New Project'
+  })
+});
   app.get('/about', (req, res) => {
     res.render('about.hbs', {
       pageTitle: 'About Page'
     });
   });
+
 
 app.get('/bad', (req, res) => {
   res.send({
@@ -49,6 +56,6 @@ app.get('/bad', (req, res) => {
 });
 
 
-app.listen(port , () =>{
+app.listen(port , () => {
   console.log(`Server is up on the port ${port}`);
 });
